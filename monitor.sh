@@ -8,13 +8,13 @@
 echo "`date "+%Y-%m-%d %H:%M:%S"` - MONITORING START" | tee -a internet.log
 
 # variable initialization
-nc -z -w 2 -G 1 8.8.8.8 53 >/dev/null 2>&1
+nc -z -w 2 -G 1 -L 5 8.8.8.8 53 >/dev/null 2>&1
 previous=$?
 TIMESTAMP=`date +%s`
 
 while [ 1 ]
   do
-    nc -z -w 2 -G 1 8.8.8.8 53 >/dev/null 2>&1
+   nc -z -w 2 -G 1 -L 5 8.8.8.8 53 >/dev/null 2>&1
     online=$?
 
     if [ $online -eq $previous ]; then
