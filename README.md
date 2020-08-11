@@ -1,5 +1,4 @@
 # mac-os-stuffs
-# Author : Jérôme Minardi
 
 Set of Unix scripts designed to run on Mac OS, but almost compatible with every unix system running standard bash
 
