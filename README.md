@@ -1,4 +1,6 @@
 # mac-os-stuffs
-A set of Unix program specifically designed for Mac OS
+# Author : Jérôme Minardi
 
-- Monitor.sh : monitor your internet connection & log and inform you when the connexion goes down and up with the corresponding duration
+Set of Unix scripts designed to run on Mac OS, but almost compatible with every unix system running standard bash
+
+- monitor.sh : Bash script to monitor internet connectivity & log / inform user when the connexion goes down and up with the corresponding duration
