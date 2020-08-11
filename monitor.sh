@@ -1,16 +1,24 @@
 #!/bin/bash
-#
+# author : jérôme Minardi
 # version: 1.0
-# on en0
+#
+# Unix (Mac Os) script to monitor internet connection status and log Up & Donw status with the duration
+# Listen on en0
 
 
 function testConnectivity {
   n=0
   while :
   do
-    nc -z -w 5 -G 1 -L 5 8.8.8.8 53 >/dev/null 2>&1
-    [[ $? = 0 ]] && break || ((n++))
-    (( n >= 5 )) && break
+    nc -z -w 2 -G 1 -L 5 8.8.8.8 53 >/dev/null 2>&1
+    if [ $? -eq 0 ]; then 
+      return 0;
+    elif [ $n -lt 5 ]; then 
+      n=$((n+1)) ;
+      sleep 1;
+    else
+      return 1;
+    fi
   done
 }
 
